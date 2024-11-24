@@ -36,19 +36,15 @@ jobs:
       - name: Apply speakeasy openapi schema overlay
         run: |
           speakeasy overlay apply --schema .openapi/v2/public/openapi.json --overlay .openapi/v2/public/openapi-overlay.yaml --strict --out openapi.yaml
-          speakeasy overlay apply --schema .openapi/v2/public/openapi.json --overlay .openapi/v2/public/openapi-overlay.yaml --strict --out openapi-prerelease.yaml
+          speakeasy overlay apply --schema .openapi/v2/public/openapi.json --overlay .openapi/v2/public/openapi-overlay-prerelease.yaml --strict --out openapi-prerelease.yaml
 
       - name: Upload generated openapi schema
         uses: actions/upload-artifact@v4
         with:
           name: openapi-schema
-          path: openapi.yaml
-
-      - name: Upload generated openapi schema prerelease
-        uses: actions/upload-artifact@v4
-        with:
-          name: openapi-schema-prerelease
-          path: openapi-prerelease.yaml
+          path: |
+            openapi.yaml
+            openapi-prerelease.yaml
 
   publish_openapi_schema_to_typescript_sdk_repo:
     needs: build_openapi_schema
@@ -70,11 +66,6 @@ jobs:
         uses: actions/download-artifact@v4
         with:
           name: openapi-schema
-
-      - name: Download openapi schema prerelease
-        uses: actions/download-artifact@v4
-        with:
-          name: openapi-schema-prerelease
 
       - name: Commit and push generated openapi schema
         run: |
@@ -105,11 +96,6 @@ jobs:
         uses: actions/download-artifact@v4
         with:
           name: openapi-schema
-
-      - name: Download openapi schema prerelease
-        uses: actions/download-artifact@v4
-        with:
-          name: openapi-schema-prerelease
 
       - name: Commit and push generated openapi schema
         run: |
