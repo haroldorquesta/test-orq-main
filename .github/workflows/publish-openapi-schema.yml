@@ -42,9 +42,13 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: openapi-schema
-          path: |
-            openapi.yaml
-            openapi-prerelease.yaml
+          path: openapi.yaml
+
+      - name: Upload generated openapi schema prerelease
+        uses: actions/upload-artifact@v4
+        with:
+          name: openapi-schema-prerelease
+          path: openapi-prerelease.yaml
 
   publish_openapi_schema_to_typescript_sdk_repo:
     needs: build_openapi_schema
@@ -66,6 +70,11 @@ jobs:
         uses: actions/download-artifact@v4
         with:
           name: openapi-schema
+
+      - name: Download openapi schema prerelease
+        uses: actions/download-artifact@v4
+        with:
+          name: openapi-schema-prerelease
 
       - name: Commit and push generated openapi schema
         run: |
@@ -96,6 +105,11 @@ jobs:
         uses: actions/download-artifact@v4
         with:
           name: openapi-schema
+
+      - name: Download openapi schema prerelease
+        uses: actions/download-artifact@v4
+        with:
+          name: openapi-schema-prerelease
 
       - name: Commit and push generated openapi schema
         run: |
