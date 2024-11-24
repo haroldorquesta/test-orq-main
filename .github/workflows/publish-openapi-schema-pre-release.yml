@@ -1,0 +1,18 @@
+name: '[Pre-release] Publishing openapi schema'
+
+on:
+  push:
+    tags:
+      - 'v[0-9]+.[0-9]+.[0-9]+-rc.[0-9]+' # v1.0.0-rc.1
+    paths:
+      - .openapi/v2/public/openapi.json
+      - .openapi/v2/public/openapi-overlay.yaml
+
+jobs:
+  publish:
+    uses: ./.github/workflows/publish-openapi-schema.yml
+    name: Runner
+    secrets: inherit
+    with:
+      generated_openapi_schema_name: openapi-prerelease.yaml
+      speakeasy_gen_config_path: packages/orq-rc/.speakeasy/gen.yaml

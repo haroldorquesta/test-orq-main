@@ -1,0 +1,103 @@
+name: Publishing openapi schema
+
+on:
+  workflow_call:
+    inputs:
+      generated_openapi_schema_name:
+        type: string
+        required: true
+      speakeasy_gen_config_path:
+        type: string
+        default: '.speakeasy/gen.yaml'
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+env:
+  DOCKER_DEFAULT_PLATFORM: linux/amd64
+
+jobs:
+  build_openapi_schema:
+    runs-on: ubuntu-latest
+    name: Build openapi schema
+    permissions:
+      contents: 'read'
+      actions: 'read'
+      packages: 'write'
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Install speakeasy cli
+        run: curl -fsSL https://raw.githubusercontent.com/speakeasy-api/speakeasy/main/install.sh | sh
+
+      - name: Apply speakeasy openapi schema overlay
+        run: speakeasy overlay apply --schema .openapi/v2/public/openapi.json --overlay .openapi/v2/public/openapi-overlay.yaml --strict --out ${{ inputs.generated_openapi_schema_name }}
+
+      - name: Upload generated openapi schema
+        uses: actions/upload-artifact@v4
+        with:
+          name: openapi-schema
+          path: ${{ inputs.generated_openapi_schema_name }}
+
+  publish_openapi_schema_to_typescript_sdk_repo:
+    needs: build_openapi_schema
+    runs-on: ubuntu-latest
+    name: Publish openapi schema to typescript sdk repo
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          repository: 'haroldorquesta/test-orq-typescript-sdk'
+          ref: 'main'
+          token: ${{ secrets.SDK_REPO_GITHUB_TOKEN }}
+
+      - name: Setup git config
+        run: |
+          git config --global user.name "Orq GitHub Actions"
+          git config --global user.email "admin@orq.ai"
+
+      - name: Download openapi schema
+        uses: actions/download-artifact@v4
+        with:
+          name: openapi-schema
+
+      - name: Commit and push generated openapi schema
+        run: |
+          tag=${{ github.sha }}
+          export release_tag="${tag:1}"
+          yq -i '.typescript.version = env(release_tag)' .speakeasy/gen.yaml
+          git add .
+          git commit -m "Publish openapi schema"
+          git push
+
+  publish_openapi_schema_to_python_sdk_repo:
+    needs: build_openapi_schema
+    runs-on: ubuntu-latest
+    name: Publish openapi schema to python sdk repo
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          repository: 'haroldorquesta/test-orq-python-sdk'
+          ref: 'main'
+          token: ${{ secrets.SDK_REPO_GITHUB_TOKEN }}
+
+      - name: Setup git config
+        run: |
+          git config --global user.name "Orq GitHub Actions"
+          git config --global user.email "admin@orq.ai"
+
+      - name: Download openapi schema
+        uses: actions/download-artifact@v4
+        with:
+          name: openapi-schema
+
+      - name: Commit and push generated openapi schema
+        run: |
+          tag=${{ github.ref_name }}
+          export release_tag="${tag:1}"
+          yq -i '.python.version = env(release_tag)' ${{ inputs.speakeasy_gen_config_path }}
+          git add .
+          git commit -m "Publish openapi schema"
+          git push
