@@ -34,13 +34,17 @@ jobs:
         run: curl -fsSL https://raw.githubusercontent.com/speakeasy-api/speakeasy/main/install.sh | sh
 
       - name: Apply speakeasy openapi schema overlay
-        run: speakeasy overlay apply --schema .openapi/v2/public/openapi.json --overlay .openapi/v2/public/openapi-overlay.yaml --strict --out ${{ inputs.generated_openapi_schema_name }}
+        run: |
+          speakeasy overlay apply --schema .openapi/v2/public/openapi.json --overlay .openapi/v2/public/openapi-overlay.yaml --strict --out openapi.yaml
+          speakeasy overlay apply --schema .openapi/v2/public/openapi.json --overlay .openapi/v2/public/openapi-overlay.yaml --strict --out openapi-prerelease.yaml
 
       - name: Upload generated openapi schema
         uses: actions/upload-artifact@v4
         with:
           name: openapi-schema
-          path: ${{ inputs.generated_openapi_schema_name }}
+          path: |
+            openapi.yaml
+            openapi-prerelease.yaml
 
   publish_openapi_schema_to_typescript_sdk_repo:
     needs: build_openapi_schema
