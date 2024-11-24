@@ -67,7 +67,7 @@ jobs:
         run: |
           tag=${{ github.ref_name }}
           export release_tag="${tag:1}"
-          yq -i '.typescript.version = env(release_tag)' .speakeasy/gen.yaml
+          yq -i '.typescript.version = env(release_tag)' ${{ inputs.speakeasy_gen_config_path }}
           git add .
           git commit -m "Publish openapi schema"
           git push
