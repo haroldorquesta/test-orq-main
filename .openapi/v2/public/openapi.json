@@ -48091,6 +48091,7 @@
           "Contacts"
         ],
         "x-speakeasy-name-override": "create",
+        "x-internal": true,
         "operationId": "CreateContact",
         "description": "Update or add user information to workspace",
         "summary": "Update user information",
