@@ -91,7 +91,7 @@
       "ReportFeedbackRequest": {
         "type": "object",
         "properties": {
-          "property": {
+          "property2": {
             "type": "string",
             "description": "A string describing the specific property or aspect rated."
           },
@@ -123,7 +123,7 @@
       "ReportFeedbackResponse": {
         "type": "object",
         "properties": {
-          "property": {
+          "property2": {
             "type": "string",
             "description": "A string describing the specific property or aspect rated."
           },
@@ -48259,7 +48259,7 @@
               "schema": {
                 "type": "object",
                 "properties": {
-                  "property": {
+                  "property2": {
                     "type": "string",
                     "description": "A string describing the specific property or aspect rated."
                   },
@@ -48292,7 +48292,7 @@
                 "value": [
                   "good"
                 ],
-                "property": "rating",
+                "property2": "rating",
                 "trace_id": "67HTZ65Z9W91HSF51CW68KK1QH"
               }
             }
@@ -48306,7 +48306,7 @@
                 "schema": {
                   "type": "object",
                   "properties": {
-                    "property": {
+                    "property2": {
                       "type": "string",
                       "description": "A string describing the specific property or aspect rated."
                     },
