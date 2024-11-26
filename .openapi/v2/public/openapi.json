@@ -68925,6 +68925,7 @@
         ],
         "x-speakeasy-group": "prompts",
         "x-speakeasy-name-override": "update",
+        "x-speakeasy-ignore": true,
         "operationId": "UpdatePrompt",
         "security": [
           {
