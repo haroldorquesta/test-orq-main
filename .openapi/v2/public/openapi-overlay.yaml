@@ -1,6 +1,6 @@
 overlay: 1.0.0
 info:
-  title: Overlay to fix deployment streaming response format
+  title: Orq overlay for speakeasy
   version: 0.0.0
 actions:
   - target: $["paths"]["/v2/deployments/invoke"]["post"]["responses"]["200"]["content"]["text/event-stream"]["schema"]["properties"]
@@ -30,7 +30,13 @@ actions:
     remove: true
   - target: $["paths"]["/v2/deployments/invoke"]["post"]["responses"]["200"]["content"]["text/event-stream"]["schema"]["properties"]["provider_response"]
     remove: true
-  - target: $.paths.*.*["security"]
-    remove: true
   - target: $["servers"][0]["url"]
     update: "https://my.orq.ai"
+  - target: $["paths"]["/v2/feedback"]["post"]["requestBody"]["content"]["application/json"]["schema"]["properties"]["property"]
+    update:
+      "x-speakeasy-name-override": "field"
+  - target: $.paths.*.*["security"]
+    update:
+      - ApiKey: []
+  - target: $.paths.*.*["security"][0]
+    remove: true

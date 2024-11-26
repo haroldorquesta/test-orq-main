@@ -13,5 +13,3 @@ jobs:
     uses: ./.github/workflows/publish-openapi-schema.yml
     name: Runner
     secrets: inherit
-    with:
-      generated_openapi_schema_name: openapi.yaml

@@ -3,9 +3,6 @@ name: Publishing openapi schema
 on:
   workflow_call:
     inputs:
-      generated_openapi_schema_name:
-        type: string
-        required: true
       speakeasy_gen_config_path:
         type: string
         default: '.speakeasy/gen.yaml'
