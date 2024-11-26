@@ -68028,6 +68028,7 @@
         ],
         "x-speakeasy-group": "prompts",
         "x-speakeasy-name-override": "createVersion",
+        "x-speakeasy-ignore": true,
         "operationId": "CreatePromptVersion",
         "security": [
           {
@@ -68931,6 +68932,7 @@
         ],
         "x-speakeasy-group": "prompts",
         "x-speakeasy-name-override": "update",
+        "x-speakeasy-ignore": true,
         "operationId": "UpdatePrompt",
         "security": [
           {
