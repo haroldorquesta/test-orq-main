@@ -32,3 +32,8 @@ actions:
     remove: true
   - target: $.paths.*.*["security"]
     remove: true
+  - target: $["servers"][0]["url"]
+    update: "https://my.staging.orq.ai"
+  - target: $["paths"]["/v2/feedback"]["post"]["requestBody"]["content"]["application/json"]["schema"]["properties"]["property"]
+    update:
+      "x-speakeasy-name-override": "field"

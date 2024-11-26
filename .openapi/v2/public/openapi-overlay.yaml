@@ -32,3 +32,5 @@ actions:
     remove: true
   - target: $.paths.*.*["security"]
     remove: true
+  - target: $["servers"][0]["url"]
+    update: "https://my.orq.ai"
