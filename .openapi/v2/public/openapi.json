@@ -68029,7 +68029,6 @@
         ],
         "x-speakeasy-group": "prompts",
         "x-speakeasy-name-override": "createVersion",
-        "x-speakeasy-ignore": true,
         "operationId": "CreatePromptVersion",
         "security": [
           {
@@ -68043,6 +68042,7 @@
               "type": "string",
               "description": "Prompt ID"
             },
+            "x-speakeasy-name-override": "prompt_id",
             "required": true,
             "description": "Prompt ID",
             "name": "id",
@@ -68933,7 +68933,6 @@
         ],
         "x-speakeasy-group": "prompts",
         "x-speakeasy-name-override": "update",
-        "x-speakeasy-ignore": true,
         "operationId": "UpdatePrompt",
         "security": [
           {
@@ -68947,6 +68946,7 @@
               "type": "string",
               "description": "Prompt ID"
             },
+            "x-speakeasy-name-override": "prompt_id",
             "required": true,
             "description": "Prompt ID",
             "name": "id",
