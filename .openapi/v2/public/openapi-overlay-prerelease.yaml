@@ -30,5 +30,5 @@ actions:
     remove: true
   - target: $["paths"]["/v2/deployments/invoke"]["post"]["responses"]["200"]["content"]["text/event-stream"]["schema"]["properties"]["provider_response"]
     remove: true
-  - target: $.paths.*.*[?(@.security)]
+  - target: $.paths.*.*["security"]
     remove: true

@@ -91,7 +91,7 @@
       "ReportFeedbackRequest": {
         "type": "object",
         "properties": {
-          "property2": {
+          "property": {
             "type": "string",
             "description": "A string describing the specific property or aspect rated."
           },
@@ -123,7 +123,7 @@
       "ReportFeedbackResponse": {
         "type": "object",
         "properties": {
-          "property2": {
+          "property": {
             "type": "string",
             "description": "A string describing the specific property or aspect rated."
           },
@@ -4154,7 +4154,7 @@
           "created": {
             "type": "string",
             "format": "date-time",
-            "default": "2024-11-25T11:22:28.171Z",
+            "default": "2024-11-26T03:01:21.984Z",
             "description": "The date and time the resource was created",
             "readOnly": true
           }
@@ -4213,7 +4213,7 @@
             "created": {
               "type": "string",
               "format": "date-time",
-              "default": "2024-11-25T11:22:28.171Z",
+              "default": "2024-11-26T03:01:21.984Z",
               "description": "The date and time the resource was created",
               "readOnly": true
             }
@@ -4558,7 +4558,7 @@
                               "type": "string"
                             }
                           ],
-                          "default": "2024-11-25T11:22:27.765Z",
+                          "default": "2024-11-26T03:01:20.782Z",
                           "description": "The date and time the resource was created",
                           "readOnly": true,
                           "format": "date-time"
@@ -4568,7 +4568,7 @@
                             {
                               "type": "string",
                               "format": "date-time",
-                              "default": "2024-11-25T11:22:27.765Z"
+                              "default": "2024-11-26T03:01:20.782Z"
                             },
                             {
                               "type": "string"
@@ -4608,7 +4608,7 @@
                     "type": "string"
                   }
                 ],
-                "default": "2024-11-25T11:22:27.765Z",
+                "default": "2024-11-26T03:01:20.782Z",
                 "description": "The date and time the resource was created",
                 "readOnly": true,
                 "format": "date-time"
@@ -4618,7 +4618,7 @@
                   {
                     "type": "string",
                     "format": "date-time",
-                    "default": "2024-11-25T11:22:27.765Z"
+                    "default": "2024-11-26T03:01:20.782Z"
                   },
                   {
                     "type": "string"
@@ -5405,7 +5405,7 @@
                     "type": "string"
                   }
                 ],
-                "default": "2024-11-25T11:22:27.765Z",
+                "default": "2024-11-26T03:01:20.782Z",
                 "description": "The date and time the resource was created",
                 "readOnly": true,
                 "format": "date-time"
@@ -5415,7 +5415,7 @@
                   {
                     "type": "string",
                     "format": "date-time",
-                    "default": "2024-11-25T11:22:27.765Z"
+                    "default": "2024-11-26T03:01:20.782Z"
                   },
                   {
                     "type": "string"
@@ -5646,7 +5646,7 @@
                           "type": "string"
                         }
                       ],
-                      "default": "2024-11-25T11:22:27.765Z",
+                      "default": "2024-11-26T03:01:20.782Z",
                       "description": "The date and time the resource was created",
                       "readOnly": true,
                       "format": "date-time"
@@ -5656,7 +5656,7 @@
                         {
                           "type": "string",
                           "format": "date-time",
-                          "default": "2024-11-25T11:22:27.765Z"
+                          "default": "2024-11-26T03:01:20.782Z"
                         },
                         {
                           "type": "string"
@@ -6287,7 +6287,7 @@
                           "type": "string"
                         }
                       ],
-                      "default": "2024-11-25T11:22:27.765Z",
+                      "default": "2024-11-26T03:01:20.782Z",
                       "description": "The date and time the resource was created",
                       "readOnly": true,
                       "format": "date-time"
@@ -6297,7 +6297,7 @@
                         {
                           "type": "string",
                           "format": "date-time",
-                          "default": "2024-11-25T11:22:27.765Z"
+                          "default": "2024-11-26T03:01:20.782Z"
                         },
                         {
                           "type": "string"
@@ -7159,7 +7159,7 @@
                           "type": "string"
                         }
                       ],
-                      "default": "2024-11-25T11:22:27.765Z",
+                      "default": "2024-11-26T03:01:20.782Z",
                       "description": "The date and time the resource was created",
                       "readOnly": true,
                       "format": "date-time"
@@ -7169,7 +7169,7 @@
                         {
                           "type": "string",
                           "format": "date-time",
-                          "default": "2024-11-25T11:22:27.765Z"
+                          "default": "2024-11-26T03:01:20.782Z"
                         },
                         {
                           "type": "string"
@@ -8035,7 +8035,7 @@
                           "type": "string"
                         }
                       ],
-                      "default": "2024-11-25T11:22:27.765Z",
+                      "default": "2024-11-26T03:01:20.782Z",
                       "description": "The date and time the resource was created",
                       "readOnly": true,
                       "format": "date-time"
@@ -8045,7 +8045,7 @@
                         {
                           "type": "string",
                           "format": "date-time",
-                          "default": "2024-11-25T11:22:27.765Z"
+                          "default": "2024-11-26T03:01:20.782Z"
                         },
                         {
                           "type": "string"
@@ -10282,7 +10282,7 @@
                           "type": "string"
                         }
                       ],
-                      "default": "2024-11-25T11:22:27.765Z",
+                      "default": "2024-11-26T03:01:20.782Z",
                       "description": "The date and time the resource was created",
                       "readOnly": true,
                       "format": "date-time"
@@ -10292,7 +10292,7 @@
                         {
                           "type": "string",
                           "format": "date-time",
-                          "default": "2024-11-25T11:22:27.765Z"
+                          "default": "2024-11-26T03:01:20.782Z"
                         },
                         {
                           "type": "string"
@@ -11154,7 +11154,7 @@
                           "type": "string"
                         }
                       ],
-                      "default": "2024-11-25T11:22:27.765Z",
+                      "default": "2024-11-26T03:01:20.782Z",
                       "description": "The date and time the resource was created",
                       "readOnly": true,
                       "format": "date-time"
@@ -11164,7 +11164,7 @@
                         {
                           "type": "string",
                           "format": "date-time",
-                          "default": "2024-11-25T11:22:27.765Z"
+                          "default": "2024-11-26T03:01:20.782Z"
                         },
                         {
                           "type": "string"
@@ -12030,7 +12030,7 @@
                           "type": "string"
                         }
                       ],
-                      "default": "2024-11-25T11:22:27.765Z",
+                      "default": "2024-11-26T03:01:20.782Z",
                       "description": "The date and time the resource was created",
                       "readOnly": true,
                       "format": "date-time"
@@ -12040,7 +12040,7 @@
                         {
                           "type": "string",
                           "format": "date-time",
-                          "default": "2024-11-25T11:22:27.765Z"
+                          "default": "2024-11-26T03:01:20.782Z"
                         },
                         {
                           "type": "string"
@@ -12913,7 +12913,7 @@
                     "type": "string"
                   }
                 ],
-                "default": "2024-11-25T11:22:27.765Z",
+                "default": "2024-11-26T03:01:20.782Z",
                 "description": "The date and time the resource was created",
                 "readOnly": true,
                 "format": "date-time"
@@ -12923,7 +12923,7 @@
                   {
                     "type": "string",
                     "format": "date-time",
-                    "default": "2024-11-25T11:22:27.765Z"
+                    "default": "2024-11-26T03:01:20.782Z"
                   },
                   {
                     "type": "string"
@@ -13785,7 +13785,7 @@
                     "type": "string"
                   }
                 ],
-                "default": "2024-11-25T11:22:27.765Z",
+                "default": "2024-11-26T03:01:20.782Z",
                 "description": "The date and time the resource was created",
                 "readOnly": true,
                 "format": "date-time"
@@ -13795,7 +13795,7 @@
                   {
                     "type": "string",
                     "format": "date-time",
-                    "default": "2024-11-25T11:22:27.765Z"
+                    "default": "2024-11-26T03:01:20.782Z"
                   },
                   {
                     "type": "string"
@@ -14661,7 +14661,7 @@
                     "type": "string"
                   }
                 ],
-                "default": "2024-11-25T11:22:27.765Z",
+                "default": "2024-11-26T03:01:20.782Z",
                 "description": "The date and time the resource was created",
                 "readOnly": true,
                 "format": "date-time"
@@ -14671,7 +14671,7 @@
                   {
                     "type": "string",
                     "format": "date-time",
-                    "default": "2024-11-25T11:22:27.765Z"
+                    "default": "2024-11-26T03:01:20.782Z"
                   },
                   {
                     "type": "string"
@@ -15549,7 +15549,7 @@
                     "type": "string"
                   }
                 ],
-                "default": "2024-11-25T11:22:27.765Z",
+                "default": "2024-11-26T03:01:20.782Z",
                 "description": "The date and time the resource was created",
                 "readOnly": true,
                 "format": "date-time"
@@ -15559,7 +15559,7 @@
                   {
                     "type": "string",
                     "format": "date-time",
-                    "default": "2024-11-25T11:22:27.765Z"
+                    "default": "2024-11-26T03:01:20.782Z"
                   },
                   {
                     "type": "string"
@@ -16421,7 +16421,7 @@
                     "type": "string"
                   }
                 ],
-                "default": "2024-11-25T11:22:27.765Z",
+                "default": "2024-11-26T03:01:20.782Z",
                 "description": "The date and time the resource was created",
                 "readOnly": true,
                 "format": "date-time"
@@ -16431,7 +16431,7 @@
                   {
                     "type": "string",
                     "format": "date-time",
-                    "default": "2024-11-25T11:22:27.765Z"
+                    "default": "2024-11-26T03:01:20.782Z"
                   },
                   {
                     "type": "string"
@@ -17297,7 +17297,7 @@
                     "type": "string"
                   }
                 ],
-                "default": "2024-11-25T11:22:27.765Z",
+                "default": "2024-11-26T03:01:20.782Z",
                 "description": "The date and time the resource was created",
                 "readOnly": true,
                 "format": "date-time"
@@ -17307,7 +17307,7 @@
                   {
                     "type": "string",
                     "format": "date-time",
-                    "default": "2024-11-25T11:22:27.765Z"
+                    "default": "2024-11-26T03:01:20.782Z"
                   },
                   {
                     "type": "string"
@@ -48210,7 +48210,7 @@
                           "type": "string"
                         }
                       ],
-                      "default": "2024-11-25T11:22:27.765Z",
+                      "default": "2024-11-26T03:01:20.782Z",
                       "description": "The date and time the resource was created",
                       "readOnly": true,
                       "format": "date-time"
@@ -48220,7 +48220,7 @@
                         {
                           "type": "string",
                           "format": "date-time",
-                          "default": "2024-11-25T11:22:27.765Z"
+                          "default": "2024-11-26T03:01:20.782Z"
                         },
                         {
                           "type": "string"
@@ -48259,7 +48259,7 @@
               "schema": {
                 "type": "object",
                 "properties": {
-                  "property2": {
+                  "property": {
                     "type": "string",
                     "description": "A string describing the specific property or aspect rated."
                   },
@@ -48292,7 +48292,7 @@
                 "value": [
                   "good"
                 ],
-                "property2": "rating",
+                "property": "rating",
                 "trace_id": "67HTZ65Z9W91HSF51CW68KK1QH"
               }
             }
@@ -48306,7 +48306,7 @@
                 "schema": {
                   "type": "object",
                   "properties": {
-                    "property2": {
+                    "property": {
                       "type": "string",
                       "description": "A string describing the specific property or aspect rated."
                     },
@@ -50819,7 +50819,7 @@
                     "created": {
                       "type": "string",
                       "format": "date-time",
-                      "default": "2024-11-25T11:22:28.171Z",
+                      "default": "2024-11-26T03:01:21.984Z",
                       "description": "The date and time the resource was created",
                       "readOnly": true
                     }
@@ -50848,7 +50848,7 @@
         ],
         "x-speakeasy-group": "files",
         "x-speakeasy-name-override": "bulkUpload",
-        "x-internal": true,
+        "x-speakeasy-ignore": true,
         "operationId": "BulkFileUpload",
         "summary": "Bulk upload file",
         "description": "Files are used to upload documents that can be used with features like [Deployments](https://docs.orq.ai/reference/post_v2-deployments-get-config).",
@@ -50916,7 +50916,7 @@
                       "created": {
                         "type": "string",
                         "format": "date-time",
-                        "default": "2024-11-25T11:22:28.171Z",
+                        "default": "2024-11-26T03:01:21.984Z",
                         "description": "The date and time the resource was created",
                         "readOnly": true
                       }
@@ -50946,7 +50946,7 @@
         ],
         "x-speakeasy-group": "dataset",
         "x-speakeasy-name-override": "create",
-        "x-internal": true,
+        "x-speakeasy-ignore": true,
         "operationId": "CreateDataset",
         "security": [
           {
@@ -51007,7 +51007,7 @@
         ],
         "x-speakeasy-group": "dataset",
         "x-speakeasy-name-override": "getAll",
-        "x-internal": true,
+        "x-speakeasy-ignore": true,
         "operationId": "GetAllDataset",
         "security": [
           {
@@ -51305,7 +51305,7 @@
                                               "type": "string"
                                             }
                                           ],
-                                          "default": "2024-11-25T11:22:27.765Z",
+                                          "default": "2024-11-26T03:01:20.782Z",
                                           "description": "The date and time the resource was created",
                                           "readOnly": true,
                                           "format": "date-time"
@@ -51315,7 +51315,7 @@
                                             {
                                               "type": "string",
                                               "format": "date-time",
-                                              "default": "2024-11-25T11:22:27.765Z"
+                                              "default": "2024-11-26T03:01:20.782Z"
                                             },
                                             {
                                               "type": "string"
@@ -51355,7 +51355,7 @@
                                     "type": "string"
                                   }
                                 ],
-                                "default": "2024-11-25T11:22:27.765Z",
+                                "default": "2024-11-26T03:01:20.782Z",
                                 "description": "The date and time the resource was created",
                                 "readOnly": true,
                                 "format": "date-time"
@@ -51365,7 +51365,7 @@
                                   {
                                     "type": "string",
                                     "format": "date-time",
-                                    "default": "2024-11-25T11:22:27.765Z"
+                                    "default": "2024-11-26T03:01:20.782Z"
                                   },
                                   {
                                     "type": "string"
@@ -51404,7 +51404,7 @@
         ],
         "x-speakeasy-group": "dataset",
         "x-speakeasy-name-override": "delete",
-        "x-internal": true,
+        "x-speakeasy-ignore": true,
         "operationId": "DeleteDataset",
         "security": [
           {
@@ -51439,7 +51439,7 @@
         ],
         "x-speakeasy-group": "dataset",
         "x-speakeasy-name-override": "getOne",
-        "x-internal": true,
+        "x-speakeasy-ignore": true,
         "operationId": "GetOneDataset",
         "security": [
           {
@@ -51714,7 +51714,7 @@
                                         "type": "string"
                                       }
                                     ],
-                                    "default": "2024-11-25T11:22:27.765Z",
+                                    "default": "2024-11-26T03:01:20.782Z",
                                     "description": "The date and time the resource was created",
                                     "readOnly": true,
                                     "format": "date-time"
@@ -51724,7 +51724,7 @@
                                       {
                                         "type": "string",
                                         "format": "date-time",
-                                        "default": "2024-11-25T11:22:27.765Z"
+                                        "default": "2024-11-26T03:01:20.782Z"
                                       },
                                       {
                                         "type": "string"
@@ -51764,7 +51764,7 @@
                               "type": "string"
                             }
                           ],
-                          "default": "2024-11-25T11:22:27.765Z",
+                          "default": "2024-11-26T03:01:20.782Z",
                           "description": "The date and time the resource was created",
                           "readOnly": true,
                           "format": "date-time"
@@ -51774,7 +51774,7 @@
                             {
                               "type": "string",
                               "format": "date-time",
-                              "default": "2024-11-25T11:22:27.765Z"
+                              "default": "2024-11-26T03:01:20.782Z"
                             },
                             {
                               "type": "string"
@@ -51819,7 +51819,7 @@
         ],
         "x-speakeasy-group": "dataset",
         "x-speakeasy-name-override": "update",
-        "x-internal": true,
+        "x-speakeasy-ignore": true,
         "operationId": "UpdateDataset",
         "security": [
           {
@@ -51887,7 +51887,7 @@
         ],
         "x-speakeasy-group": "dataset.rows",
         "x-speakeasy-name-override": "createBulk",
-        "x-internal": true,
+        "x-speakeasy-ignore": true,
         "operationId": "CreateBulkDatasetRows",
         "security": [
           {
@@ -52331,7 +52331,7 @@
         ],
         "x-speakeasy-group": "dataset.rows",
         "x-speakeasy-name-override": "deleteBulk",
-        "x-internal": true,
+        "x-speakeasy-ignore": true,
         "operationId": "DeleteBulkDatasetRows",
         "security": [
           {
@@ -52365,7 +52365,7 @@
         ],
         "x-speakeasy-group": "dataset.rows",
         "x-speakeasy-name-override": "create",
-        "x-internal": true,
+        "x-speakeasy-ignore": true,
         "operationId": "CreateDatasetRow",
         "security": [
           {
@@ -52774,7 +52774,7 @@
         ],
         "x-speakeasy-group": "dataset.rows",
         "x-speakeasy-name-override": "getAll",
-        "x-internal": true,
+        "x-speakeasy-ignore": true,
         "operationId": "GetAllDatasetRows",
         "security": [
           {
@@ -53003,7 +53003,7 @@
                                     "type": "string"
                                   }
                                 ],
-                                "default": "2024-11-25T11:22:27.765Z",
+                                "default": "2024-11-26T03:01:20.782Z",
                                 "description": "The date and time the resource was created",
                                 "readOnly": true,
                                 "format": "date-time"
@@ -53013,7 +53013,7 @@
                                   {
                                     "type": "string",
                                     "format": "date-time",
-                                    "default": "2024-11-25T11:22:27.765Z"
+                                    "default": "2024-11-26T03:01:20.782Z"
                                   },
                                   {
                                     "type": "string"
@@ -53052,7 +53052,7 @@
         ],
         "x-speakeasy-group": "dataset.rows",
         "x-speakeasy-name-override": "delete",
-        "x-internal": true,
+        "x-speakeasy-ignore": true,
         "operationId": "DeleteDatasetRow",
         "security": [
           {
@@ -53094,7 +53094,7 @@
         ],
         "x-speakeasy-group": "dataset.rows",
         "x-speakeasy-name-override": "getOne",
-        "x-internal": true,
+        "x-speakeasy-ignore": true,
         "operationId": "GetOneDatasetRow",
         "security": [
           {
@@ -53316,7 +53316,7 @@
                               "type": "string"
                             }
                           ],
-                          "default": "2024-11-25T11:22:27.765Z",
+                          "default": "2024-11-26T03:01:20.782Z",
                           "description": "The date and time the resource was created",
                           "readOnly": true,
                           "format": "date-time"
@@ -53326,7 +53326,7 @@
                             {
                               "type": "string",
                               "format": "date-time",
-                              "default": "2024-11-25T11:22:27.765Z"
+                              "default": "2024-11-26T03:01:20.782Z"
                             },
                             {
                               "type": "string"
@@ -53371,7 +53371,7 @@
         ],
         "x-speakeasy-group": "dataset.rows",
         "x-speakeasy-name-override": "update",
-        "x-internal": true,
+        "x-speakeasy-ignore": true,
         "operationId": "UpdateDatasetRow",
         "security": [
           {
@@ -53933,7 +53933,10 @@
         "tags": [
           "evals"
         ],
-        "x-internal": true,
+        "x-speakeasy-group": "evals",
+        "x-speakeasy-name-override": "all",
+        "x-speakeasy-ignore": true,
+        "operationId": "GetEvals",
         "summary": "Get all evals",
         "security": [
           {
@@ -53990,11 +53993,11 @@
                           },
                           "created": {
                             "type": "string",
-                            "default": "2024-11-25T11:22:28.060Z"
+                            "default": "2024-11-26T03:01:21.669Z"
                           },
                           "updated": {
                             "type": "string",
-                            "default": "2024-11-25T11:22:28.060Z"
+                            "default": "2024-11-26T03:01:21.669Z"
                           },
                           "created_by_id": {
                             "type": "string"
@@ -54157,11 +54160,11 @@
                           },
                           "created": {
                             "type": "string",
-                            "default": "2024-11-25T11:22:28.060Z"
+                            "default": "2024-11-26T03:01:21.669Z"
                           },
                           "updated": {
                             "type": "string",
-                            "default": "2024-11-25T11:22:28.060Z"
+                            "default": "2024-11-26T03:01:21.669Z"
                           },
                           "created_by_id": {
                             "type": "string"
@@ -54700,11 +54703,11 @@
                           },
                           "created": {
                             "type": "string",
-                            "default": "2024-11-25T11:22:28.060Z"
+                            "default": "2024-11-26T03:01:21.669Z"
                           },
                           "updated": {
                             "type": "string",
-                            "default": "2024-11-25T11:22:28.060Z"
+                            "default": "2024-11-26T03:01:21.669Z"
                           },
                           "created_by_id": {
                             "type": "string"
@@ -54872,11 +54875,11 @@
                           },
                           "created": {
                             "type": "string",
-                            "default": "2024-11-25T11:22:28.060Z"
+                            "default": "2024-11-26T03:01:21.669Z"
                           },
                           "updated": {
                             "type": "string",
-                            "default": "2024-11-25T11:22:28.060Z"
+                            "default": "2024-11-26T03:01:21.669Z"
                           },
                           "created_by_id": {
                             "type": "string"
@@ -55018,11 +55021,11 @@
                           },
                           "created": {
                             "type": "string",
-                            "default": "2024-11-25T11:22:28.060Z"
+                            "default": "2024-11-26T03:01:21.669Z"
                           },
                           "updated": {
                             "type": "string",
-                            "default": "2024-11-25T11:22:28.060Z"
+                            "default": "2024-11-26T03:01:21.669Z"
                           },
                           "created_by_id": {
                             "type": "string"
@@ -55187,11 +55190,11 @@
                           },
                           "created": {
                             "type": "string",
-                            "default": "2024-11-25T11:22:28.060Z"
+                            "default": "2024-11-26T03:01:21.669Z"
                           },
                           "updated": {
                             "type": "string",
-                            "default": "2024-11-25T11:22:28.060Z"
+                            "default": "2024-11-26T03:01:21.669Z"
                           },
                           "created_by_id": {
                             "type": "string"
@@ -55336,11 +55339,11 @@
                           },
                           "created": {
                             "type": "string",
-                            "default": "2024-11-25T11:22:28.060Z"
+                            "default": "2024-11-26T03:01:21.669Z"
                           },
                           "updated": {
                             "type": "string",
-                            "default": "2024-11-25T11:22:28.060Z"
+                            "default": "2024-11-26T03:01:21.669Z"
                           },
                           "created_by_id": {
                             "type": "string"
@@ -55474,7 +55477,10 @@
         "tags": [
           "evals"
         ],
-        "x-internal": true,
+        "x-speakeasy-group": "evals",
+        "x-speakeasy-name-override": "create",
+        "x-speakeasy-ignore": true,
+        "operationId": "CreateEval",
         "summary": "Create an evaluator",
         "security": [
           {
@@ -56866,11 +56872,11 @@
                         },
                         "created": {
                           "type": "string",
-                          "default": "2024-11-25T11:22:28.060Z"
+                          "default": "2024-11-26T03:01:21.669Z"
                         },
                         "updated": {
                           "type": "string",
-                          "default": "2024-11-25T11:22:28.060Z"
+                          "default": "2024-11-26T03:01:21.669Z"
                         },
                         "created_by_id": {
                           "type": "string"
@@ -57033,11 +57039,11 @@
                         },
                         "created": {
                           "type": "string",
-                          "default": "2024-11-25T11:22:28.060Z"
+                          "default": "2024-11-26T03:01:21.669Z"
                         },
                         "updated": {
                           "type": "string",
-                          "default": "2024-11-25T11:22:28.060Z"
+                          "default": "2024-11-26T03:01:21.669Z"
                         },
                         "created_by_id": {
                           "type": "string"
@@ -57576,11 +57582,11 @@
                         },
                         "created": {
                           "type": "string",
-                          "default": "2024-11-25T11:22:28.060Z"
+                          "default": "2024-11-26T03:01:21.669Z"
                         },
                         "updated": {
                           "type": "string",
-                          "default": "2024-11-25T11:22:28.060Z"
+                          "default": "2024-11-26T03:01:21.669Z"
                         },
                         "created_by_id": {
                           "type": "string"
@@ -57748,11 +57754,11 @@
                         },
                         "created": {
                           "type": "string",
-                          "default": "2024-11-25T11:22:28.060Z"
+                          "default": "2024-11-26T03:01:21.669Z"
                         },
                         "updated": {
                           "type": "string",
-                          "default": "2024-11-25T11:22:28.060Z"
+                          "default": "2024-11-26T03:01:21.669Z"
                         },
                         "created_by_id": {
                           "type": "string"
@@ -57894,11 +57900,11 @@
                         },
                         "created": {
                           "type": "string",
-                          "default": "2024-11-25T11:22:28.060Z"
+                          "default": "2024-11-26T03:01:21.669Z"
                         },
                         "updated": {
                           "type": "string",
-                          "default": "2024-11-25T11:22:28.060Z"
+                          "default": "2024-11-26T03:01:21.669Z"
                         },
                         "created_by_id": {
                           "type": "string"
@@ -58063,11 +58069,11 @@
                         },
                         "created": {
                           "type": "string",
-                          "default": "2024-11-25T11:22:28.060Z"
+                          "default": "2024-11-26T03:01:21.669Z"
                         },
                         "updated": {
                           "type": "string",
-                          "default": "2024-11-25T11:22:28.060Z"
+                          "default": "2024-11-26T03:01:21.669Z"
                         },
                         "created_by_id": {
                           "type": "string"
@@ -58212,11 +58218,11 @@
                         },
                         "created": {
                           "type": "string",
-                          "default": "2024-11-25T11:22:28.060Z"
+                          "default": "2024-11-26T03:01:21.669Z"
                         },
                         "updated": {
                           "type": "string",
-                          "default": "2024-11-25T11:22:28.060Z"
+                          "default": "2024-11-26T03:01:21.669Z"
                         },
                         "created_by_id": {
                           "type": "string"
@@ -58354,7 +58360,10 @@
         "tags": [
           "evals"
         ],
-        "x-internal": true,
+        "x-speakeasy-group": "evals",
+        "x-speakeasy-name-override": "get",
+        "x-speakeasy-ignore": true,
+        "operationId": "GetEval",
         "summary": "Get an eval",
         "security": [
           {
@@ -58419,11 +58428,11 @@
                         },
                         "created": {
                           "type": "string",
-                          "default": "2024-11-25T11:22:28.060Z"
+                          "default": "2024-11-26T03:01:21.669Z"
                         },
                         "updated": {
                           "type": "string",
-                          "default": "2024-11-25T11:22:28.060Z"
+                          "default": "2024-11-26T03:01:21.669Z"
                         },
                         "created_by_id": {
                           "type": "string"
@@ -58586,11 +58595,11 @@
                         },
                         "created": {
                           "type": "string",
-                          "default": "2024-11-25T11:22:28.060Z"
+                          "default": "2024-11-26T03:01:21.669Z"
                         },
                         "updated": {
                           "type": "string",
-                          "default": "2024-11-25T11:22:28.060Z"
+                          "default": "2024-11-26T03:01:21.669Z"
                         },
                         "created_by_id": {
                           "type": "string"
@@ -59129,11 +59138,11 @@
                         },
                         "created": {
                           "type": "string",
-                          "default": "2024-11-25T11:22:28.060Z"
+                          "default": "2024-11-26T03:01:21.669Z"
                         },
                         "updated": {
                           "type": "string",
-                          "default": "2024-11-25T11:22:28.060Z"
+                          "default": "2024-11-26T03:01:21.669Z"
                         },
                         "created_by_id": {
                           "type": "string"
@@ -59301,11 +59310,11 @@
                         },
                         "created": {
                           "type": "string",
-                          "default": "2024-11-25T11:22:28.060Z"
+                          "default": "2024-11-26T03:01:21.669Z"
                         },
                         "updated": {
                           "type": "string",
-                          "default": "2024-11-25T11:22:28.060Z"
+                          "default": "2024-11-26T03:01:21.669Z"
                         },
                         "created_by_id": {
                           "type": "string"
@@ -59447,11 +59456,11 @@
                         },
                         "created": {
                           "type": "string",
-                          "default": "2024-11-25T11:22:28.060Z"
+                          "default": "2024-11-26T03:01:21.669Z"
                         },
                         "updated": {
                           "type": "string",
-                          "default": "2024-11-25T11:22:28.060Z"
+                          "default": "2024-11-26T03:01:21.669Z"
                         },
                         "created_by_id": {
                           "type": "string"
@@ -59616,11 +59625,11 @@
                         },
                         "created": {
                           "type": "string",
-                          "default": "2024-11-25T11:22:28.060Z"
+                          "default": "2024-11-26T03:01:21.669Z"
                         },
                         "updated": {
                           "type": "string",
-                          "default": "2024-11-25T11:22:28.060Z"
+                          "default": "2024-11-26T03:01:21.669Z"
                         },
                         "created_by_id": {
                           "type": "string"
@@ -59765,11 +59774,11 @@
                         },
                         "created": {
                           "type": "string",
-                          "default": "2024-11-25T11:22:28.060Z"
+                          "default": "2024-11-26T03:01:21.669Z"
                         },
                         "updated": {
                           "type": "string",
-                          "default": "2024-11-25T11:22:28.060Z"
+                          "default": "2024-11-26T03:01:21.669Z"
                         },
                         "created_by_id": {
                           "type": "string"
@@ -59902,6 +59911,10 @@
         "tags": [
           "evals"
         ],
+        "x-speakeasy-group": "evals",
+        "x-speakeasy-name-override": "update",
+        "x-speakeasy-ignore": true,
+        "operationId": "UpdateEval",
         "summary": "Update an eval",
         "security": [
           {
@@ -61256,11 +61269,11 @@
                         },
                         "created": {
                           "type": "string",
-                          "default": "2024-11-25T11:22:28.060Z"
+                          "default": "2024-11-26T03:01:21.669Z"
                         },
                         "updated": {
                           "type": "string",
-                          "default": "2024-11-25T11:22:28.060Z"
+                          "default": "2024-11-26T03:01:21.669Z"
                         },
                         "created_by_id": {
                           "type": "string"
@@ -61423,11 +61436,11 @@
                         },
                         "created": {
                           "type": "string",
-                          "default": "2024-11-25T11:22:28.060Z"
+                          "default": "2024-11-26T03:01:21.669Z"
                         },
                         "updated": {
                           "type": "string",
-                          "default": "2024-11-25T11:22:28.060Z"
+                          "default": "2024-11-26T03:01:21.669Z"
                         },
                         "created_by_id": {
                           "type": "string"
@@ -61966,11 +61979,11 @@
                         },
                         "created": {
                           "type": "string",
-                          "default": "2024-11-25T11:22:28.060Z"
+                          "default": "2024-11-26T03:01:21.669Z"
                         },
                         "updated": {
                           "type": "string",
-                          "default": "2024-11-25T11:22:28.060Z"
+                          "default": "2024-11-26T03:01:21.669Z"
                         },
                         "created_by_id": {
                           "type": "string"
@@ -62138,11 +62151,11 @@
                         },
                         "created": {
                           "type": "string",
-                          "default": "2024-11-25T11:22:28.060Z"
+                          "default": "2024-11-26T03:01:21.669Z"
                         },
                         "updated": {
                           "type": "string",
-                          "default": "2024-11-25T11:22:28.060Z"
+                          "default": "2024-11-26T03:01:21.669Z"
                         },
                         "created_by_id": {
                           "type": "string"
@@ -62284,11 +62297,11 @@
                         },
                         "created": {
                           "type": "string",
-                          "default": "2024-11-25T11:22:28.060Z"
+                          "default": "2024-11-26T03:01:21.669Z"
                         },
                         "updated": {
                           "type": "string",
-                          "default": "2024-11-25T11:22:28.060Z"
+                          "default": "2024-11-26T03:01:21.669Z"
                         },
                         "created_by_id": {
                           "type": "string"
@@ -62453,11 +62466,11 @@
                         },
                         "created": {
                           "type": "string",
-                          "default": "2024-11-25T11:22:28.060Z"
+                          "default": "2024-11-26T03:01:21.669Z"
                         },
                         "updated": {
                           "type": "string",
-                          "default": "2024-11-25T11:22:28.060Z"
+                          "default": "2024-11-26T03:01:21.669Z"
                         },
                         "created_by_id": {
                           "type": "string"
@@ -62602,11 +62615,11 @@
                         },
                         "created": {
                           "type": "string",
-                          "default": "2024-11-25T11:22:28.060Z"
+                          "default": "2024-11-26T03:01:21.669Z"
                         },
                         "updated": {
                           "type": "string",
-                          "default": "2024-11-25T11:22:28.060Z"
+                          "default": "2024-11-26T03:01:21.669Z"
                         },
                         "created_by_id": {
                           "type": "string"
@@ -62739,7 +62752,10 @@
         "tags": [
           "evals"
         ],
-        "x-internal": true,
+        "x-speakeasy-group": "evals",
+        "x-speakeasy-name-override": "delete",
+        "x-speakeasy-ignore": true,
+        "operationId": "DeleteEval",
         "summary": "Delete an eval",
         "parameters": [
           {
@@ -62781,7 +62797,10 @@
         "tags": [
           "evals"
         ],
-        "x-internal": true,
+        "x-speakeasy-group": "evals",
+        "x-speakeasy-name-override": "duplicate",
+        "x-speakeasy-ignore": true,
+        "operationId": "DuplicateEval",
         "summary": "Duplicate an evaluator",
         "security": [
           {
@@ -62846,11 +62865,11 @@
                         },
                         "created": {
                           "type": "string",
-                          "default": "2024-11-25T11:22:28.060Z"
+                          "default": "2024-11-26T03:01:21.669Z"
                         },
                         "updated": {
                           "type": "string",
-                          "default": "2024-11-25T11:22:28.060Z"
+                          "default": "2024-11-26T03:01:21.669Z"
                         },
                         "created_by_id": {
                           "type": "string"
@@ -63013,11 +63032,11 @@
                         },
                         "created": {
                           "type": "string",
-                          "default": "2024-11-25T11:22:28.060Z"
+                          "default": "2024-11-26T03:01:21.669Z"
                         },
                         "updated": {
                           "type": "string",
-                          "default": "2024-11-25T11:22:28.060Z"
+                          "default": "2024-11-26T03:01:21.669Z"
                         },
                         "created_by_id": {
                           "type": "string"
@@ -63556,11 +63575,11 @@
                         },
                         "created": {
                           "type": "string",
-                          "default": "2024-11-25T11:22:28.060Z"
+                          "default": "2024-11-26T03:01:21.669Z"
                         },
                         "updated": {
                           "type": "string",
-                          "default": "2024-11-25T11:22:28.060Z"
+                          "default": "2024-11-26T03:01:21.669Z"
                         },
                         "created_by_id": {
                           "type": "string"
@@ -63728,11 +63747,11 @@
                         },
                         "created": {
                           "type": "string",
-                          "default": "2024-11-25T11:22:28.060Z"
+                          "default": "2024-11-26T03:01:21.669Z"
                         },
                         "updated": {
                           "type": "string",
-                          "default": "2024-11-25T11:22:28.060Z"
+                          "default": "2024-11-26T03:01:21.669Z"
                         },
                         "created_by_id": {
                           "type": "string"
@@ -63874,11 +63893,11 @@
                         },
                         "created": {
                           "type": "string",
-                          "default": "2024-11-25T11:22:28.060Z"
+                          "default": "2024-11-26T03:01:21.669Z"
                         },
                         "updated": {
                           "type": "string",
-                          "default": "2024-11-25T11:22:28.060Z"
+                          "default": "2024-11-26T03:01:21.669Z"
                         },
                         "created_by_id": {
                           "type": "string"
@@ -64043,11 +64062,11 @@
                         },
                         "created": {
                           "type": "string",
-                          "default": "2024-11-25T11:22:28.060Z"
+                          "default": "2024-11-26T03:01:21.669Z"
                         },
                         "updated": {
                           "type": "string",
-                          "default": "2024-11-25T11:22:28.060Z"
+                          "default": "2024-11-26T03:01:21.669Z"
                         },
                         "created_by_id": {
                           "type": "string"
@@ -64192,11 +64211,11 @@
                         },
                         "created": {
                           "type": "string",
-                          "default": "2024-11-25T11:22:28.060Z"
+                          "default": "2024-11-26T03:01:21.669Z"
                         },
                         "updated": {
                           "type": "string",
-                          "default": "2024-11-25T11:22:28.060Z"
+                          "default": "2024-11-26T03:01:21.669Z"
                         },
                         "created_by_id": {
                           "type": "string"
@@ -64924,7 +64943,7 @@
                                     "type": "string"
                                   }
                                 ],
-                                "default": "2024-11-25T11:22:27.765Z",
+                                "default": "2024-11-26T03:01:20.782Z",
                                 "description": "The date and time the resource was created",
                                 "readOnly": true,
                                 "format": "date-time"
@@ -64934,7 +64953,7 @@
                                   {
                                     "type": "string",
                                     "format": "date-time",
-                                    "default": "2024-11-25T11:22:27.765Z"
+                                    "default": "2024-11-26T03:01:20.782Z"
                                   },
                                   {
                                     "type": "string"
@@ -65796,7 +65815,7 @@
                                     "type": "string"
                                   }
                                 ],
-                                "default": "2024-11-25T11:22:27.765Z",
+                                "default": "2024-11-26T03:01:20.782Z",
                                 "description": "The date and time the resource was created",
                                 "readOnly": true,
                                 "format": "date-time"
@@ -65806,7 +65825,7 @@
                                   {
                                     "type": "string",
                                     "format": "date-time",
-                                    "default": "2024-11-25T11:22:27.765Z"
+                                    "default": "2024-11-26T03:01:20.782Z"
                                   },
                                   {
                                     "type": "string"
@@ -66672,7 +66691,7 @@
                                     "type": "string"
                                   }
                                 ],
-                                "default": "2024-11-25T11:22:27.765Z",
+                                "default": "2024-11-26T03:01:20.782Z",
                                 "description": "The date and time the resource was created",
                                 "readOnly": true,
                                 "format": "date-time"
@@ -66682,7 +66701,7 @@
                                   {
                                     "type": "string",
                                     "format": "date-time",
-                                    "default": "2024-11-25T11:22:27.765Z"
+                                    "default": "2024-11-26T03:01:20.782Z"
                                   },
                                   {
                                     "type": "string"
@@ -69745,7 +69764,7 @@
                               "type": "string"
                             }
                           ],
-                          "default": "2024-11-25T11:22:27.765Z",
+                          "default": "2024-11-26T03:01:20.782Z",
                           "description": "The date and time the resource was created",
                           "readOnly": true,
                           "format": "date-time"
@@ -69755,7 +69774,7 @@
                             {
                               "type": "string",
                               "format": "date-time",
-                              "default": "2024-11-25T11:22:27.765Z"
+                              "default": "2024-11-26T03:01:20.782Z"
                             },
                             {
                               "type": "string"
@@ -70617,7 +70636,7 @@
                               "type": "string"
                             }
                           ],
-                          "default": "2024-11-25T11:22:27.765Z",
+                          "default": "2024-11-26T03:01:20.782Z",
                           "description": "The date and time the resource was created",
                           "readOnly": true,
                           "format": "date-time"
@@ -70627,7 +70646,7 @@
                             {
                               "type": "string",
                               "format": "date-time",
-                              "default": "2024-11-25T11:22:27.765Z"
+                              "default": "2024-11-26T03:01:20.782Z"
                             },
                             {
                               "type": "string"
@@ -71493,7 +71512,7 @@
                               "type": "string"
                             }
                           ],
-                          "default": "2024-11-25T11:22:27.765Z",
+                          "default": "2024-11-26T03:01:20.782Z",
                           "description": "The date and time the resource was created",
                           "readOnly": true,
                           "format": "date-time"
@@ -71503,7 +71522,7 @@
                             {
                               "type": "string",
                               "format": "date-time",
-                              "default": "2024-11-25T11:22:27.765Z"
+                              "default": "2024-11-26T03:01:20.782Z"
                             },
                             {
                               "type": "string"
@@ -72610,7 +72629,7 @@
                                     "type": "string"
                                   }
                                 ],
-                                "default": "2024-11-25T11:22:27.765Z",
+                                "default": "2024-11-26T03:01:20.782Z",
                                 "description": "The date and time the resource was created",
                                 "readOnly": true,
                                 "format": "date-time"
@@ -72620,7 +72639,7 @@
                                   {
                                     "type": "string",
                                     "format": "date-time",
-                                    "default": "2024-11-25T11:22:27.765Z"
+                                    "default": "2024-11-26T03:01:20.782Z"
                                   },
                                   {
                                     "type": "string"
@@ -73482,7 +73501,7 @@
                                     "type": "string"
                                   }
                                 ],
-                                "default": "2024-11-25T11:22:27.765Z",
+                                "default": "2024-11-26T03:01:20.782Z",
                                 "description": "The date and time the resource was created",
                                 "readOnly": true,
                                 "format": "date-time"
@@ -73492,7 +73511,7 @@
                                   {
                                     "type": "string",
                                     "format": "date-time",
-                                    "default": "2024-11-25T11:22:27.765Z"
+                                    "default": "2024-11-26T03:01:20.782Z"
                                   },
                                   {
                                     "type": "string"
@@ -74358,7 +74377,7 @@
                                     "type": "string"
                                   }
                                 ],
-                                "default": "2024-11-25T11:22:27.765Z",
+                                "default": "2024-11-26T03:01:20.782Z",
                                 "description": "The date and time the resource was created",
                                 "readOnly": true,
                                 "format": "date-time"
@@ -74368,7 +74387,7 @@
                                   {
                                     "type": "string",
                                     "format": "date-time",
-                                    "default": "2024-11-25T11:22:27.765Z"
+                                    "default": "2024-11-26T03:01:20.782Z"
                                   },
                                   {
                                     "type": "string"
@@ -75281,7 +75300,7 @@
                               "type": "string"
                             }
                           ],
-                          "default": "2024-11-25T11:22:27.765Z",
+                          "default": "2024-11-26T03:01:20.782Z",
                           "description": "The date and time the resource was created",
                           "readOnly": true,
                           "format": "date-time"
@@ -75291,7 +75310,7 @@
                             {
                               "type": "string",
                               "format": "date-time",
-                              "default": "2024-11-25T11:22:27.765Z"
+                              "default": "2024-11-26T03:01:20.782Z"
                             },
                             {
                               "type": "string"
@@ -76153,7 +76172,7 @@
                               "type": "string"
                             }
                           ],
-                          "default": "2024-11-25T11:22:27.765Z",
+                          "default": "2024-11-26T03:01:20.782Z",
                           "description": "The date and time the resource was created",
                           "readOnly": true,
                           "format": "date-time"
@@ -76163,7 +76182,7 @@
                             {
                               "type": "string",
                               "format": "date-time",
-                              "default": "2024-11-25T11:22:27.765Z"
+                              "default": "2024-11-26T03:01:20.782Z"
                             },
                             {
                               "type": "string"
@@ -77029,7 +77048,7 @@
                               "type": "string"
                             }
                           ],
-                          "default": "2024-11-25T11:22:27.765Z",
+                          "default": "2024-11-26T03:01:20.782Z",
                           "description": "The date and time the resource was created",
                           "readOnly": true,
                           "format": "date-time"
@@ -77039,7 +77058,7 @@
                             {
                               "type": "string",
                               "format": "date-time",
-                              "default": "2024-11-25T11:22:27.765Z"
+                              "default": "2024-11-26T03:01:20.782Z"
                             },
                             {
                               "type": "string"
