@@ -3,39 +3,33 @@ name: Test Workflow Inputs
 on:
   workflow_dispatch:
     inputs:
-      user_name:
-        description: 'Your name (free text input)'
+      environment:
         required: true
         type: string
-        default: 'World'
-      
-      message:
-        description: 'Custom message (free text input)'
-        required: false
-        type: string
-        default: 'Hello from GitHub Actions!'
-      
-      environment:
-        description: 'Select environment'
+        description: 'Environment name (e.g., staging, production)'
+      tags:
         required: true
         type: choice
         options:
-          - development
-          - staging
-          - production
-        default: 'development'
-      
-      enable_debug:
-        description: 'Enable debug mode'
-        required: false
-        type: boolean
-        default: false
-      
-      version:
-        description: 'Version number (free text)'
+          - @staging
+          - @production
+          - @admin
+        description: 'Cucumber tags to run (e.g., @staging, @production)'
+      slack_environment:
+        required: true
+        type: choice
+        options:
+          - Staging
+          - Production
+        description: 'Environment name for Slack notifications'
+      feature_path:
         required: false
         type: string
-        default: '1.0.0'
+        description: 'Feature path to run (e.g. apps/orquesta-e2e/features/**/*.feature)'
+    secrets:
+      secret1:
+        description: 'my env'
+        required: true
 
 jobs:
   test-inputs:
