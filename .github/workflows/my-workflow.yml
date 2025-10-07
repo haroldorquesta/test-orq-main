@@ -11,9 +11,9 @@ on:
         required: true
         type: choice
         options:
-          - @staging
-          - @production
-          - @admin
+          - '@staging'
+          - '@production'
+          - '@admin'
         description: 'Cucumber tags to run (e.g., @staging, @production)'
       slack_environment:
         required: true
