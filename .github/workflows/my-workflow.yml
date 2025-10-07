@@ -1,0 +1,94 @@
+name: Test Workflow Inputs
+
+on:
+  workflow_dispatch:
+    inputs:
+      user_name:
+        description: 'Your name (free text input)'
+        required: true
+        type: string
+        default: 'World'
+      
+      message:
+        description: 'Custom message (free text input)'
+        required: false
+        type: string
+        default: 'Hello from GitHub Actions!'
+      
+      environment:
+        description: 'Select environment'
+        required: true
+        type: choice
+        options:
+          - development
+          - staging
+          - production
+        default: 'development'
+      
+      enable_debug:
+        description: 'Enable debug mode'
+        required: false
+        type: boolean
+        default: false
+      
+      version:
+        description: 'Version number (free text)'
+        required: false
+        type: string
+        default: '1.0.0'
+
+jobs:
+  test-inputs:
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+      
+      - name: Display all inputs
+        run: |
+          echo "================================"
+          echo "🎯 Workflow Inputs Test Results"
+          echo "================================"
+          echo ""
+          echo "👤 User Name: ${{ inputs.user_name }}"
+          echo "💬 Message: ${{ inputs.message }}"
+          echo "🌍 Environment: ${{ inputs.environment }}"
+          echo "🐛 Debug Mode: ${{ inputs.enable_debug }}"
+          echo "📦 Version: ${{ inputs.version }}"
+          echo ""
+          echo "================================"
+      
+      - name: Conditional step based on debug input
+        if: inputs.enable_debug == true
+        run: |
+          echo "🐛 Debug mode is ENABLED!"
+          echo "Additional debug information would go here..."
+      
+      - name: Environment-specific action
+        run: |
+          case "${{ inputs.environment }}" in
+            "production")
+              echo "🚀 Running in PRODUCTION mode - be careful!"
+              ;;
+            "staging")
+              echo "🧪 Running in STAGING mode"
+              ;;
+            "development")
+              echo "🔧 Running in DEVELOPMENT mode"
+              ;;
+          esac
+      
+      - name: Create summary
+        run: |
+          echo "## 🎉 Workflow Execution Summary" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "| Input | Value |" >> $GITHUB_STEP_SUMMARY
+          echo "|-------|-------|" >> $GITHUB_STEP_SUMMARY
+          echo "| User Name | ${{ inputs.user_name }} |" >> $GITHUB_STEP_SUMMARY
+          echo "| Message | ${{ inputs.message }} |" >> $GITHUB_STEP_SUMMARY
+          echo "| Environment | ${{ inputs.environment }} |" >> $GITHUB_STEP_SUMMARY
+          echo "| Debug Mode | ${{ inputs.enable_debug }} |" >> $GITHUB_STEP_SUMMARY
+          echo "| Version | ${{ inputs.version }} |" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "✅ All inputs processed successfully!" >> $GITHUB_STEP_SUMMARY
