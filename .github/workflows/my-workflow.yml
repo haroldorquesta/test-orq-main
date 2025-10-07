@@ -2,16 +2,37 @@ name: '[Test-Staging] E2E Tests'
 
 on:
   workflow_dispatch:
+    inputs:
+      tags:
+        description: 'Cucumber tags to run'
+        required: false
+        type: string
+        default: '@admin'
+      feature_path:
+        description: 'Feature path to run'
+        required: false
+        type: string
+        default: 'apps/orquesta-e2e/features/**/*.feature'
+      environment:
+        description: 'Environment name'
+        required: false
+        type: string
+        default: 'staging'
+      slack_environment:
+        description: 'Slack environment name'
+        required: false
+        type: string
+        default: 'Staging'
 
 jobs:
   staging-e2e-tests:
     uses: ./.github/workflows/reusable.yml
     name: Staging E2E Tests
     with:
-      environment: staging
-      tags: '@admin'
-      slack_environment: 'Staging'
-      feature_path: 'apps/orquesta-e2e/features/**/*.feature'
+      environment: ${{ inputs.environment }}
+      tags: ${{ inputs.tags }}
+      slack_environment: ${{ inputs.slack_environment }}
+      feature_path: ${{ inputs.feature_path }}
     secrets:
       BASE_URL: ${{ secrets.E2E_STAGING_BASE_URL }}
       ORQ_API_URL: ${{ secrets.E2E_STAGING_ORQ_API_URL }}
