@@ -13,25 +13,15 @@ on:
         required: false
         type: string
         default: 'apps/orquesta-e2e/features/**/*.feature'
-      environment:
-        description: 'Environment name'
-        required: false
-        type: string
-        default: 'staging'
-      slack_environment:
-        description: 'Slack environment name'
-        required: false
-        type: string
-        default: 'Staging'
 
 jobs:
   staging-e2e-tests:
     uses: ./.github/workflows/reusable.yml
     name: Staging E2E Tests
     with:
-      environment: ${{ inputs.environment }}
+      environment: staging
       tags: ${{ inputs.tags }}
-      slack_environment: ${{ inputs.slack_environment }}
+      slack_environment: Staging
       feature_path: ${{ inputs.feature_path }}
     secrets:
       BASE_URL: ${{ secrets.E2E_STAGING_BASE_URL }}

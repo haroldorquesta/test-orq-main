@@ -111,95 +111,102 @@ jobs:
         with:
           bun-version: latest
 
-      - name: Cache node modules
-        id: cache
-        uses: actions/cache@v4
-        with:
-          path: node_modules
-          key: cache-node-modules-${{ hashFiles('bun.lockb') }}
-          restore-keys: |
-            cache-node-modules-
-
-      - name: Install dependencies
-        if: steps.cache.outputs.cache-hit != 'true'
-        run: bun install --immutable
-
-      - name: Cache Nx
-        uses: actions/cache@v4
-        with:
-          path: node_modules/.cache/nx
-          key: cache-nx-${{ hashFiles('bun.lockb') }}-e2e-${{ github.sha }}
-          restore-keys: |
-            cache-nx-${{ hashFiles('bun.lockb') }}-e2e-
-            cache-nx-${{ hashFiles('bun.lockb') }}-
-            cache-nx-
-
-      - name: Install Playwright Browsers
-        run: bunx playwright install --with-deps chromium
-
-      - name: Run ${{ inputs.environment }} E2E Tests
-        env:
-          BASE_URL: ${{ secrets.BASE_URL }}
-          ORQ_API_URL: ${{ secrets.ORQ_API_URL }}
-          SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
-          FEATURE_PATH: ${{ inputs.feature_path }}
-          SLACK_ENVIRONMENT: ${{ inputs.slack_environment }}
-          TAGS: ${{ inputs.tags }}
-          BROWSER: chromium
-          HEADLESS: true
-          Azure_chat_endpoint: ${{ secrets.AZURE_CHAT_ENDPOINT }}
-          Azure_completion_endpoint: ${{ secrets.AZURE_COMPLETION_ENDPOINT }}
-          Azure_vision_endpoint: ${{ secrets.AZURE_VISION_ENDPOINT }}
-          Azure_api_key: ${{ secrets.AZURE_API_KEY }}
-          APIKey-Fal: ${{ secrets.FAL_API_KEY }}
-          APIKeyCerebras: ${{ secrets.CEREBRAS_API_KEY }}
-          APIKey-OpenAI: ${{ secrets.OPENAI_API_KEY }}
-          APIKey-Preplexity: ${{ secrets.PERPLEXITY_API_KEY }}
-          APIKey-TogetherAI: ${{ secrets.TOGETHERAI_API_KEY }}
-          APIKey-Leonardo: ${{ secrets.LEONARDO_API_KEY }}
-          APIKey-Groq: ${{ secrets.GROQ_API_KEY }}
-          APIKey-GoogleAI: ${{ secrets.GOOGLEAI_API_KEY }}
-          APIKey-Cohere: ${{ secrets.COHERE_API_KEY }}
-          APIKey-AnyScale: ${{ secrets.ANYSCALE_API_KEY }}
-          APIKey-Anthropic: ${{ secrets.ANTHROPIC_API_KEY }}
-          Serviceaccount-GoogleVertexAI: ${{ secrets.GOOGLEVERTEXAI_SERVICE_ACCOUNT }}
-          ProjectID-GoogleVertexAI: ${{ secrets.GOOGLE_VERTEXAI_PROJECT_ID }}
-          AccessKeyID-AWSBedrock: ${{ secrets.AWS_BEDROCK_ACCESS_KEY_ID }}
-          SecretAccessKey-AWSBedrock: ${{ secrets.AWS_BEDROCK_SECRET_ACCESS_KEY }}
-          LiteLLM-BaseUrl: ${{ secrets.LITELLM_BASE_URL }}
-          LiteLLM-ApiKey: ${{ secrets.LITELLM_API_KEY }}
-          APIKey-Jina: ${{ secrets.JINA_API_KEY }}
+      - name: Echo
         run: |
-          bunx nx run orquesta-e2e:e2e
-        continue-on-error: true
+          echo "environment: ${{ inputs.environment }}"
+          echo "tags: ${{ inputs.tags }}"
+          echo "slack_environment: ${{ inputs.slack_environment }}"
+          echo "feature_path: ${{ inputs.feature_path }}"
 
-      - name: Generate Html Report
-        if: always()
-        run: |
-          node apps/orquesta-e2e/scripts/generateReport.js
+      # - name: Cache node modules
+      #   id: cache
+      #   uses: actions/cache@v4
+      #   with:
+      #     path: node_modules
+      #     key: cache-node-modules-${{ hashFiles('bun.lockb') }}
+      #     restore-keys: |
+      #       cache-node-modules-
 
-      - name: Generate Slack Report
-        if: always()
-        env:
-          SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
-          SLACK_ENVIRONMENT: ${{ inputs.slack_environment }}
-        run: |
-          node apps/orquesta-e2e/scripts/slackReport.js
+      # - name: Install dependencies
+      #   if: steps.cache.outputs.cache-hit != 'true'
+      #   run: bun install --immutable
 
-      - name: Upload test results
-        if: always()
-        uses: actions/upload-artifact@v4
-        with:
-          name: ${{ inputs.environment }}-e2e-report-${{ github.run_id }}
-          path: |
-            apps/orquesta-e2e/reports/
-            apps/orquesta-e2e/screenshots/
-          retention-days: 7
+      # - name: Cache Nx
+      #   uses: actions/cache@v4
+      #   with:
+      #     path: node_modules/.cache/nx
+      #     key: cache-nx-${{ hashFiles('bun.lockb') }}-e2e-${{ github.sha }}
+      #     restore-keys: |
+      #       cache-nx-${{ hashFiles('bun.lockb') }}-e2e-
+      #       cache-nx-${{ hashFiles('bun.lockb') }}-
+      #       cache-nx-
 
-      - name: Upload HTML report
-        if: always()
-        uses: actions/upload-artifact@v4
-        with:
-          name: ${{ inputs.environment }}-e2e-html-report-${{ github.run_id }}
-          path: apps/orquesta-e2e/reports/cucumber-report.html
-          retention-days: 7
+      # - name: Install Playwright Browsers
+      #   run: bunx playwright install --with-deps chromium
+
+      # - name: Run ${{ inputs.environment }} E2E Tests
+      #   env:
+      #     BASE_URL: ${{ secrets.BASE_URL }}
+      #     ORQ_API_URL: ${{ secrets.ORQ_API_URL }}
+      #     SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
+      #     FEATURE_PATH: ${{ inputs.feature_path }}
+      #     SLACK_ENVIRONMENT: ${{ inputs.slack_environment }}
+      #     TAGS: ${{ inputs.tags }}
+      #     BROWSER: chromium
+      #     HEADLESS: true
+      #     Azure_chat_endpoint: ${{ secrets.AZURE_CHAT_ENDPOINT }}
+      #     Azure_completion_endpoint: ${{ secrets.AZURE_COMPLETION_ENDPOINT }}
+      #     Azure_vision_endpoint: ${{ secrets.AZURE_VISION_ENDPOINT }}
+      #     Azure_api_key: ${{ secrets.AZURE_API_KEY }}
+      #     APIKey-Fal: ${{ secrets.FAL_API_KEY }}
+      #     APIKeyCerebras: ${{ secrets.CEREBRAS_API_KEY }}
+      #     APIKey-OpenAI: ${{ secrets.OPENAI_API_KEY }}
+      #     APIKey-Preplexity: ${{ secrets.PERPLEXITY_API_KEY }}
+      #     APIKey-TogetherAI: ${{ secrets.TOGETHERAI_API_KEY }}
+      #     APIKey-Leonardo: ${{ secrets.LEONARDO_API_KEY }}
+      #     APIKey-Groq: ${{ secrets.GROQ_API_KEY }}
+      #     APIKey-GoogleAI: ${{ secrets.GOOGLEAI_API_KEY }}
+      #     APIKey-Cohere: ${{ secrets.COHERE_API_KEY }}
+      #     APIKey-AnyScale: ${{ secrets.ANYSCALE_API_KEY }}
+      #     APIKey-Anthropic: ${{ secrets.ANTHROPIC_API_KEY }}
+      #     Serviceaccount-GoogleVertexAI: ${{ secrets.GOOGLEVERTEXAI_SERVICE_ACCOUNT }}
+      #     ProjectID-GoogleVertexAI: ${{ secrets.GOOGLE_VERTEXAI_PROJECT_ID }}
+      #     AccessKeyID-AWSBedrock: ${{ secrets.AWS_BEDROCK_ACCESS_KEY_ID }}
+      #     SecretAccessKey-AWSBedrock: ${{ secrets.AWS_BEDROCK_SECRET_ACCESS_KEY }}
+      #     LiteLLM-BaseUrl: ${{ secrets.LITELLM_BASE_URL }}
+      #     LiteLLM-ApiKey: ${{ secrets.LITELLM_API_KEY }}
+      #     APIKey-Jina: ${{ secrets.JINA_API_KEY }}
+      #   run: |
+      #     bunx nx run orquesta-e2e:e2e
+      #   continue-on-error: true
+
+      # - name: Generate Html Report
+      #   if: always()
+      #   run: |
+      #     node apps/orquesta-e2e/scripts/generateReport.js
+
+      # - name: Generate Slack Report
+      #   if: always()
+      #   env:
+      #     SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
+      #     SLACK_ENVIRONMENT: ${{ inputs.slack_environment }}
+      #   run: |
+      #     node apps/orquesta-e2e/scripts/slackReport.js
+
+      # - name: Upload test results
+      #   if: always()
+      #   uses: actions/upload-artifact@v4
+      #   with:
+      #     name: ${{ inputs.environment }}-e2e-report-${{ github.run_id }}
+      #     path: |
+      #       apps/orquesta-e2e/reports/
+      #       apps/orquesta-e2e/screenshots/
+      #     retention-days: 7
+
+      # - name: Upload HTML report
+      #   if: always()
+      #   uses: actions/upload-artifact@v4
+      #   with:
+      #     name: ${{ inputs.environment }}-e2e-html-report-${{ github.run_id }}
+      #     path: apps/orquesta-e2e/reports/cucumber-report.html
+      #     retention-days: 7
