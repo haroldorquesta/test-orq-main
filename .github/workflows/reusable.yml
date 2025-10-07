@@ -1,0 +1,205 @@
+name: Reusable E2E Tests
+
+on:
+  workflow_call:
+    inputs:
+      environment:
+        required: true
+        type: string
+        description: 'Environment name (e.g., staging, production)'
+      tags:
+        required: true
+        type: string
+        description: 'Cucumber tags to run (e.g., @staging, @production)'
+      slack_environment:
+        required: true
+        type: string
+        description: 'Environment name for Slack notifications'
+      feature_path:
+        required: false
+        type: string
+        description: 'Feature path to run (e.g. apps/orquesta-e2e/features/**/*.feature)'
+    secrets:
+      BASE_URL:
+        description: "Base URL for the environment"
+        required: true
+      ORQ_API_URL:
+        description: "API URL for the environment"
+        required: true
+      SLACK_WEBHOOK_URL:
+        description: "Slack webhook URL for notifications"
+        required: true
+      AZURE_CHAT_ENDPOINT:
+        description: "Azure chat endpoint"
+        required: true
+      AZURE_COMPLETION_ENDPOINT:
+        description: "Azure completion endpoint"
+        required: true
+      AZURE_VISION_ENDPOINT:
+        description: "Azure vision endpoint"
+        required: true
+      AZURE_API_KEY:
+        description: "Azure api key"
+        required: true
+      FAL_API_KEY:
+        description: "Fal api key"
+        required: true
+      CEREBRAS_API_KEY:
+        description: "Cerebras api key"
+        required: true
+      OPENAI_API_KEY:
+        description: "Open AI api key"
+        required: true
+      PERPLEXITY_API_KEY:
+        description: "Perplexity api key"
+        required: true
+      TOGETHERAI_API_KEY:
+        description: "Together AI api key"
+        required: true
+      LEONARDO_API_KEY:
+        description: "Leonardo api key"
+        required: true
+      GROQ_API_KEY:
+        description: "Groq api key"
+        required: true
+      GOOGLEAI_API_KEY:
+        description: "Google AI api key"
+        required: true
+      COHERE_API_KEY:
+        description: "Cohere api key"
+        required: true
+      ANYSCALE_API_KEY:
+        description: "Anyscale api key"
+        required: true
+      ANTHROPIC_API_KEY:
+        description: "Anthropic api key"
+        required: true
+      GOOGLEVERTEXAI_SERVICE_ACCOUNT:
+        description: "Google vertex AI service account"
+        required: true
+      GOOGLE_VERTEXAI_PROJECT_ID:
+        description: "Google vertex AI project id"
+        required: true
+      AWS_BEDROCK_ACCESS_KEY_ID:
+        description: "AWS bedrock access key id"
+        required: true
+      AWS_BEDROCK_SECRET_ACCESS_KEY:
+        description: "AWS bedrock secret access key"
+        required: true
+      LITELLM_BASE_URL:
+        description: "Lite LLM base url"
+        required: true
+      LITELLM_API_KEY:
+        description: "Lite LLM api key"
+        required: true
+      JINA_API_KEY:
+        description: "Jina api key"
+        required: true
+jobs:
+  e2e-tests:
+    runs-on: ubuntu-latest
+    name: ${{ inputs.environment }} E2E Tests
+    
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Setup Bun
+        uses: oven-sh/setup-bun@v2
+        with:
+          bun-version: latest
+
+      - name: Cache node modules
+        id: cache
+        uses: actions/cache@v4
+        with:
+          path: node_modules
+          key: cache-node-modules-${{ hashFiles('bun.lockb') }}
+          restore-keys: |
+            cache-node-modules-
+
+      - name: Install dependencies
+        if: steps.cache.outputs.cache-hit != 'true'
+        run: bun install --immutable
+
+      - name: Cache Nx
+        uses: actions/cache@v4
+        with:
+          path: node_modules/.cache/nx
+          key: cache-nx-${{ hashFiles('bun.lockb') }}-e2e-${{ github.sha }}
+          restore-keys: |
+            cache-nx-${{ hashFiles('bun.lockb') }}-e2e-
+            cache-nx-${{ hashFiles('bun.lockb') }}-
+            cache-nx-
+
+      - name: Install Playwright Browsers
+        run: bunx playwright install --with-deps chromium
+
+      - name: Run ${{ inputs.environment }} E2E Tests
+        env:
+          BASE_URL: ${{ secrets.BASE_URL }}
+          ORQ_API_URL: ${{ secrets.ORQ_API_URL }}
+          SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
+          FEATURE_PATH: ${{ inputs.feature_path }}
+          SLACK_ENVIRONMENT: ${{ inputs.slack_environment }}
+          TAGS: ${{ inputs.tags }}
+          BROWSER: chromium
+          HEADLESS: true
+          Azure_chat_endpoint: ${{ secrets.AZURE_CHAT_ENDPOINT }}
+          Azure_completion_endpoint: ${{ secrets.AZURE_COMPLETION_ENDPOINT }}
+          Azure_vision_endpoint: ${{ secrets.AZURE_VISION_ENDPOINT }}
+          Azure_api_key: ${{ secrets.AZURE_API_KEY }}
+          APIKey-Fal: ${{ secrets.FAL_API_KEY }}
+          APIKeyCerebras: ${{ secrets.CEREBRAS_API_KEY }}
+          APIKey-OpenAI: ${{ secrets.OPENAI_API_KEY }}
+          APIKey-Preplexity: ${{ secrets.PERPLEXITY_API_KEY }}
+          APIKey-TogetherAI: ${{ secrets.TOGETHERAI_API_KEY }}
+          APIKey-Leonardo: ${{ secrets.LEONARDO_API_KEY }}
+          APIKey-Groq: ${{ secrets.GROQ_API_KEY }}
+          APIKey-GoogleAI: ${{ secrets.GOOGLEAI_API_KEY }}
+          APIKey-Cohere: ${{ secrets.COHERE_API_KEY }}
+          APIKey-AnyScale: ${{ secrets.ANYSCALE_API_KEY }}
+          APIKey-Anthropic: ${{ secrets.ANTHROPIC_API_KEY }}
+          Serviceaccount-GoogleVertexAI: ${{ secrets.GOOGLEVERTEXAI_SERVICE_ACCOUNT }}
+          ProjectID-GoogleVertexAI: ${{ secrets.GOOGLE_VERTEXAI_PROJECT_ID }}
+          AccessKeyID-AWSBedrock: ${{ secrets.AWS_BEDROCK_ACCESS_KEY_ID }}
+          SecretAccessKey-AWSBedrock: ${{ secrets.AWS_BEDROCK_SECRET_ACCESS_KEY }}
+          LiteLLM-BaseUrl: ${{ secrets.LITELLM_BASE_URL }}
+          LiteLLM-ApiKey: ${{ secrets.LITELLM_API_KEY }}
+          APIKey-Jina: ${{ secrets.JINA_API_KEY }}
+        run: |
+          bunx nx run orquesta-e2e:e2e
+        continue-on-error: true
+
+      - name: Generate Html Report
+        if: always()
+        run: |
+          node apps/orquesta-e2e/scripts/generateReport.js
+
+      - name: Generate Slack Report
+        if: always()
+        env:
+          SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
+          SLACK_ENVIRONMENT: ${{ inputs.slack_environment }}
+        run: |
+          node apps/orquesta-e2e/scripts/slackReport.js
+
+      - name: Upload test results
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: ${{ inputs.environment }}-e2e-report-${{ github.run_id }}
+          path: |
+            apps/orquesta-e2e/reports/
+            apps/orquesta-e2e/screenshots/
+          retention-days: 7
+
+      - name: Upload HTML report
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: ${{ inputs.environment }}-e2e-html-report-${{ github.run_id }}
+          path: apps/orquesta-e2e/reports/cucumber-report.html
+          retention-days: 7

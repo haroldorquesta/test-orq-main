@@ -1,88 +1,40 @@
-name: Test Workflow Inputs
+name: '[Test-Staging] E2E Tests'
 
 on:
   workflow_dispatch:
-    inputs:
-      environment:
-        required: true
-        type: string
-        description: 'Environment name (e.g., staging, production)'
-      tags:
-        required: true
-        type: choice
-        options:
-          - '@staging'
-          - '@production'
-          - '@admin'
-        description: 'Cucumber tags to run (e.g., @staging, @production)'
-      slack_environment:
-        required: true
-        type: choice
-        options:
-          - Staging
-          - Production
-        description: 'Environment name for Slack notifications'
-      feature_path:
-        required: false
-        type: string
-        description: 'Feature path to run (e.g. apps/orquesta-e2e/features/**/*.feature)'
-    secrets:
-      secret1:
-        description: 'my env'
-        required: true
 
 jobs:
-  test-inputs:
-    runs-on: ubuntu-latest
-    
-    steps:
-      - name: Checkout code
-        uses: actions/checkout@v4
-      
-      - name: Display all inputs
-        run: |
-          echo "================================"
-          echo "🎯 Workflow Inputs Test Results"
-          echo "================================"
-          echo ""
-          echo "👤 User Name: ${{ inputs.user_name }}"
-          echo "💬 Message: ${{ inputs.message }}"
-          echo "🌍 Environment: ${{ inputs.environment }}"
-          echo "🐛 Debug Mode: ${{ inputs.enable_debug }}"
-          echo "📦 Version: ${{ inputs.version }}"
-          echo ""
-          echo "================================"
-      
-      - name: Conditional step based on debug input
-        if: inputs.enable_debug == true
-        run: |
-          echo "🐛 Debug mode is ENABLED!"
-          echo "Additional debug information would go here..."
-      
-      - name: Environment-specific action
-        run: |
-          case "${{ inputs.environment }}" in
-            "production")
-              echo "🚀 Running in PRODUCTION mode - be careful!"
-              ;;
-            "staging")
-              echo "🧪 Running in STAGING mode"
-              ;;
-            "development")
-              echo "🔧 Running in DEVELOPMENT mode"
-              ;;
-          esac
-      
-      - name: Create summary
-        run: |
-          echo "## 🎉 Workflow Execution Summary" >> $GITHUB_STEP_SUMMARY
-          echo "" >> $GITHUB_STEP_SUMMARY
-          echo "| Input | Value |" >> $GITHUB_STEP_SUMMARY
-          echo "|-------|-------|" >> $GITHUB_STEP_SUMMARY
-          echo "| User Name | ${{ inputs.user_name }} |" >> $GITHUB_STEP_SUMMARY
-          echo "| Message | ${{ inputs.message }} |" >> $GITHUB_STEP_SUMMARY
-          echo "| Environment | ${{ inputs.environment }} |" >> $GITHUB_STEP_SUMMARY
-          echo "| Debug Mode | ${{ inputs.enable_debug }} |" >> $GITHUB_STEP_SUMMARY
-          echo "| Version | ${{ inputs.version }} |" >> $GITHUB_STEP_SUMMARY
-          echo "" >> $GITHUB_STEP_SUMMARY
-          echo "✅ All inputs processed successfully!" >> $GITHUB_STEP_SUMMARY
+  staging-e2e-tests:
+    uses: ./.github/workflows/reusable.yml
+    name: Staging E2E Tests
+    with:
+      environment: staging
+      tags: '@admin'
+      slack_environment: 'Staging'
+      feature_path: 'apps/orquesta-e2e/features/**/*.feature'
+    secrets:
+      BASE_URL: ${{ secrets.E2E_STAGING_BASE_URL }}
+      ORQ_API_URL: ${{ secrets.E2E_STAGING_ORQ_API_URL }}
+      SLACK_WEBHOOK_URL: ${{ secrets.E2E_STAGING_SLACK_WEBHOOK_URL }}
+      AZURE_CHAT_ENDPOINT: ${{ secrets.E2E_AZURE_CHAT_ENDPOINT }}
+      AZURE_COMPLETION_ENDPOINT: ${{ secrets.E2E_AZURE_COMPLETION_ENDPOINT }}
+      AZURE_VISION_ENDPOINT: ${{ secrets.E2E_AZURE_VISION_ENDPOINT }}
+      AZURE_API_KEY: ${{ secrets.E2E_AZURE_API_KEY }}
+      FAL_API_KEY: ${{ secrets.E2E_FAL_API_KEY }}
+      CEREBRAS_API_KEY: ${{ secrets.E2E_CEREBRAS_API_KEY }}
+      OPENAI_API_KEY: ${{ secrets.E2E_OPENAI_API_KEY }}
+      PERPLEXITY_API_KEY: ${{ secrets.E2E_PERPLEXITY_API_KEY }}
+      TOGETHERAI_API_KEY: ${{ secrets.E2E_TOGETHERAI_API_KEY }}
+      LEONARDO_API_KEY: ${{ secrets.E2E_LEONARDO_API_KEY }}
+      GROQ_API_KEY: ${{ secrets.E2E_GROQ_API_KEY }}
+      GOOGLEAI_API_KEY: ${{ secrets.E2E_GOOGLEAI_API_KEY }}
+      COHERE_API_KEY: ${{ secrets.E2E_COHERE_API_KEY }}
+      ANYSCALE_API_KEY: ${{ secrets.E2E_ANYSCALE_API_KEY }}
+      ANTHROPIC_API_KEY: ${{ secrets.E2E_ANTHROPIC_API_KEY }}
+      GOOGLEVERTEXAI_SERVICE_ACCOUNT: ${{ secrets.E2E_GOOGLEVERTEXAI_SERVICE_ACCOUNT }}
+      GOOGLE_VERTEXAI_PROJECT_ID: ${{ secrets.E2E_GOOGLE_VERTEXAI_PROJECT_ID }}
+      AWS_BEDROCK_ACCESS_KEY_ID: ${{ secrets.E2E_AWS_BEDROCK_ACCESS_KEY_ID }}
+      AWS_BEDROCK_SECRET_ACCESS_KEY: ${{ secrets.E2E_AWS_BEDROCK_SECRET_ACCESS_KEY }}
+      LITELLM_BASE_URL: ${{ secrets.E2E_LITELLM_BASE_URL }}
+      LITELLM_API_KEY: ${{ secrets.E2E_LITELLM_API_KEY }}
+      JINA_API_KEY: ${{ secrets.E2E_JINA_API_KEY }}
